@@ -1,0 +1,459 @@
+:root {
+  --bg-page: #faf7f2;
+  --bg-card: #ffffff;
+  --wood-dark: #3e210e;
+  --wood-primary: #6b3b1e;
+  --wood-accent: #b86b28;
+  --gold-soft: #f3e6d3;
+  --text-main: #231f1e;
+  --text-muted: #5c534e;
+  --border-soft: #e4d8c8;
+  --success: #236b3b;
+  --error: #9e2a2b;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(62, 33, 14, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Cabecera */
+.topbar {
+  background: linear-gradient(135deg, var(--wood-dark), var(--wood-primary));
+  color: #fff;
+  padding-top: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+.brand-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+}
+
+.brand h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.92rem;
+  color: #f3e6d3;
+  margin-top: 0.2rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+.status-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4ade80;
+}
+
+.status-pill.offline .dot {
+  background-color: #fbbf24;
+}
+
+/* Navegación modular */
+.main-nav {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-scroll {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #f3e6d3;
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.nav-btn.active {
+  background: var(--bg-page);
+  color: var(--wood-dark);
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  padding: 1.75rem 1rem 2.5rem;
+}
+
+.module-panel {
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.module-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-left: 6px solid var(--wood-accent);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.75rem;
+}
+
+.hero-card h2 {
+  color: var(--wood-dark);
+  margin-bottom: 0.6rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.15rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--wood-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--wood-dark);
+}
+
+.btn-secondary {
+  background: var(--gold-soft);
+  color: var(--wood-dark);
+}
+
+.btn-secondary:hover {
+  background: #e7d3b5;
+}
+
+.section-title {
+  color: var(--wood-dark);
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  box-shadow: var(--shadow);
+}
+
+.block-spacer {
+  margin-bottom: 1.35rem;
+}
+
+.step-tag, .module-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--wood-accent);
+  margin-bottom: 0.35rem;
+}
+
+.card h4, .card h3 {
+  color: var(--wood-dark);
+  margin-bottom: 0.45rem;
+}
+
+.card p {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+
+.btn-link {
+  margin-top: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--wood-primary);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.badge-pending {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  background: var(--gold-soft);
+  color: var(--wood-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.module-header {
+  margin-bottom: 1.35rem;
+}
+
+.module-header h2 {
+  color: var(--wood-dark);
+  font-size: 1.5rem;
+}
+
+/* Línea de tiempo y pestañas Módulo 1 */
+.hint {
+  font-size: 0.88rem;
+  margin-bottom: 0.85rem;
+}
+
+.timeline-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tab-pill {
+  background: var(--gold-soft);
+  border: 1px solid var(--border-soft);
+  color: var(--wood-dark);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-pill.active {
+  background: var(--wood-primary);
+  color: #fff;
+  border-color: var(--wood-primary);
+}
+
+.timeline-content {
+  background: #fdfbf7;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 1.1rem;
+}
+
+.etapa-header {
+  margin-bottom: 0.65rem;
+}
+
+.etapa-sub {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--wood-accent);
+}
+
+.etapa-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: var(--gold-soft);
+  padding: 0.75rem 0.95rem;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  color: var(--wood-dark);
+}
+
+/* Tabla de evolución organológica */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-top: 0.5rem;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid var(--border-soft);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+}
+
+.history-table th {
+  background: var(--wood-primary);
+  color: #fff;
+}
+
+.history-table tr:nth-child(even) {
+  background: #fdfbf7;
+}
+
+/* Quiz de comprobación */
+.quiz-block {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.quiz-block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.quiz-q {
+  color: var(--wood-dark);
+  margin-bottom: 0.45rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+}
+
+.quiz-opt {
+  text-align: left;
+  background: #fdfbf7;
+  border: 1px solid var(--border-soft);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.quiz-opt:hover {
+  border-color: var(--wood-accent);
+}
+
+.quiz-opt.correct {
+  background: #e8f5ec;
+  border-color: var(--success);
+  color: var(--success);
+  font-weight: 600;
+}
+
+.quiz-opt.wrong {
+  background: #fbeaea;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.quiz-feedback {
+  margin-top: 0.65rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Lista de chequeo Unidad Didáctica 1 */
+.checklist-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0.85rem 0;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+  margin-top: 0.25rem;
+  accent-color: var(--wood-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.progress-summary {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--wood-primary);
+}
+
+/* Pie de página */
+.footer {
+  background: var(--wood-dark);
+  color: #e4d8c8;
+  padding: 1.25rem 0;
+  font-size: 0.84rem;
+  text-align: center;
+}
