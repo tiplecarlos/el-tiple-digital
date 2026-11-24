@@ -1,0 +1,10 @@
+{
+  "name": "El Tiple Digital - EVA",
+  "short_name": "El Tiple Digital",
+  "description": "Entorno Virtual de Aprendizaje para la iniciación en el tiple colombiano.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#5c3317",
+  "lang": "es-CO"
+}
